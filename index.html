@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulazione Probabilità e Imprevisti</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altezza della viewport */
+        }
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 20px;
+            margin: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background-color: #ff7f50; /* Colore arancione corallo */
+            color: white;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button img {
+            width: 48px; /* Dimensioni maggiori per le immagini */
+            height: 48px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #ff6347; /* Colore rosso pomodoro più scuro */
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #ff4500; /* Colore arancione scuro */
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <h1>Simulazione Probabilità e Imprevisti</h1>
+        <button id="probabilitaBtn"><img src="prob.png" alt="Probabilità"> Probabilità</button>
+        <button id="imprevistiBtn"><img src="imp.png" alt="Imprevisti"> Imprevisti</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imprevisti = [
+                "pietro ha rapito tua figlia e devi versare 100 euro per riaverla",
+                "hai calpestato i pomodori di pietro e lui ti chiede 50 euro per ripagarli",
+                "una bambina rapita ha rubato il tesoro di pietro 200",
+                "è il compleanno di pietro ogni giocatore da 10 euro al suo conto bancario",
+                "un terremoto ha distrutto casa di pietro e quindi lui va nel tuo albergo sspaventando tutti i clienti (paghi 10 per ogni albergo)",
+				"un terremoto ha distrutto casa di pietro e quindi lui va nella tua casaa spaventando i vicini (paghi 10 per ogni casa)",
+                "Il giocatore di nome demetrio deve versare 10 euro alla banca",
+                "Pietro scopre dove abbiti e devi cambiare casa paghi 70 euro",
+                "Pietro ti compra in affitto la cantina che hai sotto le tue case (ricevi 10 euro per ogni casa)"
+            ];
+
+            const probabilita = [
+                "andate nella cantina senza passare da via pietro",
+                "Pietro ha rubato la tua stampante e chiede 50 euro per ridartela",
+                "l'unipegaso torna in presenza paghi 100 euro di benzina",
+                "Andate avanti fino ad omniachess.",
+                "Pietro ti rapisce per sbaglio e vai in cantina senza passare da via pietro",
+                "E' il tuo compleanno e pietro ti regala un pomodoro",
+                "Il giocatore di nome Alessandro perde la partita",
+                "Puoi piazzare una casa in più in una proprietà anche senza la serie compelta"
+            ];
+
+            const probabilitaBtn = document.getElementById('probabilitaBtn');
+            const imprevistiBtn = document.getElementById('imprevistiBtn');
+
+            probabilitaBtn.addEventListener('click', function() {
+                const randomIndex = Math.floor(Math.random() * probabilita.length);
+                alert(probabilita[randomIndex]);
+            });
+
+            imprevistiBtn.addEventListener('click', function() {
+                const randomIndex = Math.floor(Math.random() * imprevisti.length);
+                alert(imprevisti[randomIndex]);
+            });
+        });
+    </script>
+</body>
+</html>
